@@ -16,7 +16,7 @@ router.get('/', async function(req, res, next) {
     if (user.role === Roles.client) {
       aggregation.push({
         $match: {
-          userId: newObjectId(user._id),
+          userId: new ObjectId(user._id),
         },
       })
     }
@@ -36,17 +36,17 @@ router.get('/', async function(req, res, next) {
       }
     ]).exec()) :[]).map(appt => ({
       ...appt,
-      date: moment(appt.date).format('MMMM Do YYYY, h:mm a'),
+      date: moment(appt.date).format('MMMM DD YYYY, h:mm a'),
     }));
 
     res.render('index', { title: 'Cleaning Services - Schedule Application', isSignedIn, appts});
-    })
+    });
   
 // GET Route, OAuth Authenticate
 router.get('/auth/google', passport.authenticate(
   'google',
   {
-    scope: ['profile', 'email']
+    scope: ['email', 'profile']
   }
 ));
 

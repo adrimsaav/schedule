@@ -1,7 +1,9 @@
 <%- include('../partials/header') %>
+
 <form action="/appts" method="POST"">
+
     <div class="days">
-      <br>Pick Best Day(s) for Visits:
+      <br>Pick Best Day for Visits:
       <br>
           <input type="date" name="date"/>
       <br>
@@ -9,7 +11,7 @@
 <br>
     <div class="note">Any special requests or comments you would like to make?</div><br>
     <div>
-      <textarea class="note" id="body" name="body" placeholder="Let us know!..."></textarea>
+      <textarea class="note" id="comment" name="comment" placeholder="E.g. Clean Only Main Floor, Pets will be home, etc." style="width: 400px" rows="12"></textarea>
     </div>
 
     <div class="button">

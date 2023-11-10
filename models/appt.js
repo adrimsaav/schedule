@@ -19,17 +19,6 @@ const apptSchema = new Schema({
     default: false,
   },
 
-  timeWindow: {
-    morning: {
-        type: Boolean,
-        default: false,
-      },
-      afternoon: {
-        type: Boolean,
-        default: false,
-      }
-  },
-
 }, {versionKey: false});
 
 module.exports = mongoose.model('Appt', apptSchema);
