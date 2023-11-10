@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+<form action="/appts/<%= appt._id %>" method="POST"">
+
+   <div class="days">
+    Pick Best Day(s) for Visits:
+      <br>
+        <input type="date" name="date" value="<%= appt.date %>"/>
+      <br>
+    </div>
+    <br>
+
+    <div class="note">Any special requests or comments you would like to make?</div>
+    <div>
+      <textarea class="note" id="body" name="body" placeholder="Let us know!..."><%= appt.comment %></textarea>
+    </div>
+
+    <div class="button">
+      <button type="submit">Submit</button>
+    </div>
+
+  </form>
+
+<%- include('../partials/footer') %>

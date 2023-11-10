@@ -1,0 +1,22 @@
+<%- include('./partials/header') %>
+
+<% if (isSignedIn) { %>
+    <h1> My Scheduled Appointments </h1>
+    <ul>
+        <% appts.forEach((appt) => { %>
+        <li>
+            <b>Date: </b> <%= appt.date %>
+            <br>
+            <b>Comment: </b> <%= appt.comment %>
+            <br>
+            <b>Email: </b> <%= appt?.user?.email %>
+            <br>
+            <a href="/appts/<%= appt._id %>/edit">Edit</a>
+            <br>
+            <a href="/appts/<%= appt._id %>/delete">Delete</a>
+        </li>
+        <% }) %>
+    </ul>
+<% } %>
+
+<%- include('./partials/footer') %>

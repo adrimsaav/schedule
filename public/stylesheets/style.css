@@ -1,0 +1,30 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #cba4d7;
+  color: white;
+}
+
+a {
+  color: #69108c;
+}
+
+login-container{
+  width: 500px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.nav-menu {
+  color: #ffffff;
+  text-align: center;
+}
+
+.signin-button {
+  content: url("https://raw.githubusercontent.com/react-native-community/react-native-google-signin/HEAD/img/signin-button.png");
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 180px;
+}
+

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> <%= title %> </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body class="nav-menu">
+    <h1> <%= title %> </h1>
+    <p>Schedule a cleaning appointment today!</p>
+    <% if (!isSignedIn) { %>
+      <a class = "signin-button" href="/auth/google">Login</a>
+    <% } %>
+
+    <% if (isSignedIn) { %>
+    <a href="/appts/new">Schedule Appointment</a> |
+    <a href="/logout">Logout</a>
+  <%} %>
