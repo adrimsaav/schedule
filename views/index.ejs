@@ -2,7 +2,7 @@
 
 <% if (isSignedIn) { %>
     <h1> My Scheduled Appointments </h1>
-    <ul>
+    <ul class = "info">
         <% appts.forEach((appt) => { %>
         <li>
             <b>Date: </b> <%= appt.date %>
@@ -18,5 +18,5 @@
         <% }) %>
     </ul>
 <% } %>
-
+<p class="footer"> Requests will be reviewed and accepted within 12 hours! Please be patient with us. ¡Se Habla Español!</p>
 <%- include('./partials/footer') %>

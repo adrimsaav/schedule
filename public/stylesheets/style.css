@@ -28,3 +28,24 @@ login-container{
   width: 180px;
 }
 
+.logo {
+  content: url("https://i.pinimg.com/564x/70/13/67/70136724e649fbd81a391c9855e3447e.jpg");
+  width: 250px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.info {
+  border: 1px solid white;
+  padding: 1px;
+}

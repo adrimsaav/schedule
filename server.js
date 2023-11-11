@@ -7,6 +7,7 @@ const passport = require('passport');
 const session = require('express-session');
 const methodOverride = require('method-override');
 const cors = require('cors');
+const flash = require('connect-flash');
 
 require('dotenv').config();
 require('./config/db');
@@ -42,10 +43,16 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 app.use(function(req, res, next) {
   res.locals.user = req.user;
   next();
+});
+
+
+app.get('/contact', (req, res) => {
+	res.send(req.flash('message'));
 });
 
 app.use('/', indexRouter);
