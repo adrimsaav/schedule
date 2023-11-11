@@ -1,5 +1,6 @@
 const ObjectId = require('mongoose').Types.ObjectId;
 const Appt = require('../models/appt');
+const User = require('../models/user');
 const moment = require('moment');
 
 module.exports = {
@@ -32,17 +33,15 @@ async function create(req, res) {
   try {
     const body = req.body;
 
-      await Appt.create({
+      await User.create, Appt.create({
         date: body.date,
         userId: req?.user?._id,
         comment: body.comment,
+        timewindow: body.timewindow,
+        address: body.address,
+        name: body.name,
       });
 
-      await User.create({
-        timewindow: body.comment,
-        address: body.comment,
-        comment: body.comment,
-      });
 
       return res.redirect('/');
   } catch (err) {

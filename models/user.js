@@ -3,15 +3,7 @@ const Schema = mongoose.Schema;
 
 
 const userSchema = new Schema({
-  googleId: {
-    type: String,
-    required: true
-  },
-  firstName: {
-      type: String,
-      required: true,
-  },
-  lastName: {
+  name: {
       type: String,
       required: true,
   },
@@ -24,17 +16,12 @@ const userSchema = new Schema({
   },
   address: {
       type: String,
+      required: true
   },
   timewindow: {
-    morning: {
         type: String,
-        required: true,
-      },
-      afternoon: {
-        type: String,
-        required: true,
+        required: true
       }
-  },
 }, 
 {
   versionKey: false

@@ -2,9 +2,10 @@ var express = require('express');
 var router = express.Router();
 const passport = require('passport');
 const Appt = require('../models/appt');
-const {Roles} = require('../models/user');
+const User = require('../models/user');
 const ObjectId = require('mongoose').Types.ObjectId;
 const moment = require('moment');
+const app = require('../server');
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
@@ -13,7 +14,6 @@ router.get('/', async function(req, res, next) {
 
     const aggregation = [];
 
-    
     const appts = (isSignedIn ? (await Appt.aggregate ([
       ...aggregation,
       {
@@ -29,10 +29,8 @@ router.get('/', async function(req, res, next) {
       }
     ]).exec()) :[]).map(appt => ({
       ...appt,
-      date: moment(appt.date).utc().format('MMMM Do YYYY, h:mm'),
+      date: moment(appt.date).utc().format('MMMM Do YYYY'),
     }));
-
-
 
     res.render('index', { title: 'Cleaning Services - Schedule Application', isSignedIn, appts});
     });

@@ -1,4 +1,5 @@
 const Appt = require('../models/appt')
+const User = require('../models/user')
 
 module.exports = {
     delete: removeAppt,
