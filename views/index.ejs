@@ -10,10 +10,9 @@
             <b>Info: </b> <%= appt.comment %>
             <br>
             <b>Email: </b> <%= user?.email %>
-            <br>
-            <a href="/appts/<%= appt._id %>/edit">Edit</a>
-            <br>
-            <a href="/appts/<%= appt._id %>/delete">Delete</a>
+            <br><br>
+            <a class = "appt-button" href="/appts/<%= appt._id %>/edit">Edit</a> 
+            <a class = "appt-button" href="/appts/<%= appt._id %>/delete">Delete</a>
         </li>
         <% }) %>
     </ul>
