@@ -9,7 +9,11 @@
             <br>
             <b>Comment: </b> <%= appt.comment %>
             <br>
-            <b>Email: </b> <%= appt?.user?.email %>
+            <b>Time Window Preferred: </b> <%= user?.timewindow %>
+            <br>
+            <b>Address: </b> <%= user?.address %>
+            <br>
+            <b>Name: </b> <%= user?.name %>
             <br>
             <a href="/appts/<%= appt._id %>/edit">Edit</a>
             <br>

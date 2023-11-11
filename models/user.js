@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const Roles = {
-  admin: 'admin',
-  client: 'client'
-}
 
 const userSchema = new Schema({
   googleId: {
@@ -13,9 +9,11 @@ const userSchema = new Schema({
   },
   firstName: {
       type: String,
+      required: true,
   },
   lastName: {
       type: String,
+      required: true,
   },
   phone: {
       type: String,
@@ -24,26 +22,23 @@ const userSchema = new Schema({
     unique: true,
     type: String,
   },
-  role: {
-    type: String,
-    enum: Object.values(Roles),
-    default: Roles.client
-  },
   address: {
-    street: {
       type: String,
-    },
-    city: {
-      type: String,
-    },
-    zip: {
-      type: String,
-    },
-  }
-}, {
+  },
+  timewindow: {
+    morning: {
+        type: String,
+        required: true,
+      },
+      afternoon: {
+        type: String,
+        required: true,
+      }
+  },
+}, 
+{
   versionKey: false
 });
 
-exports.Roles = Roles;
 exports.User = mongoose.model('User', userSchema);
   

@@ -13,13 +13,6 @@ router.get('/', async function(req, res, next) {
 
     const aggregation = [];
 
-    if (user.role === Roles.client) {
-      aggregation.push({
-        $match: {
-          userId: new ObjectId(user._id),
-        },
-      })
-    }
     
     const appts = (isSignedIn ? (await Appt.aggregate ([
       ...aggregation,
@@ -36,8 +29,10 @@ router.get('/', async function(req, res, next) {
       }
     ]).exec()) :[]).map(appt => ({
       ...appt,
-      date: moment(appt.date).format('MMMM DD YYYY, h:mm a'),
+      date: moment(appt.date).utc().format('MMMM Do YYYY, h:mm'),
     }));
+
+
 
     res.render('index', { title: 'Cleaning Services - Schedule Application', isSignedIn, appts});
     });

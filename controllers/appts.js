@@ -37,6 +37,13 @@ async function create(req, res) {
         userId: req?.user?._id,
         comment: body.comment,
       });
+
+      await User.create({
+        timewindow: body.comment,
+        address: body.comment,
+        comment: body.comment,
+      });
+
       return res.redirect('/');
   } catch (err) {
     console.error(err)
@@ -64,7 +71,7 @@ async function update(req, res) {
 
 async function index(req, res) {
     const appts = Appt.find({});
-    res.render('appts/index', { title: 'Upcoming Appointments: ', appts, isSignedIn: req.isAuthenticated()});
+    res.render('appts/index', { appts, isSignedIn: req.isAuthenticated()});
 }
 
 async function newAppt(req, res) {

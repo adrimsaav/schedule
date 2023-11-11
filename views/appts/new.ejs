@@ -8,11 +8,27 @@
           <input type="date" name="date"/>
       <br>
     </div>
+
+    <div class="time-window">
+      Time Window Preferred:
+      <input type="note" name="options" placeholder="E.g. 2:00PM - 4:00PM" value="<%= user?.timewindow %>"/>
+    </div>  <br>
+
+    <div class="address">
+      Address:
+      <input type="note" name="address" style="width: 300px" placeholder="e.g. 1000 N St, City, 20815" value="<%= user?.address %>"/>
+    </div>  <br>
+
 <br>
     <div class="note">Any special requests or comments you would like to make?</div><br>
     <div>
       <textarea class="note" id="comment" name="comment" placeholder="E.g. Clean Only Main Floor, Pets will be home, etc." style="width: 400px" rows="12"></textarea>
-    </div>
+    </div> <br>
+
+    <div class="name">
+      Name of Person Making Appointment:
+      <input type="note" name="name" style="width: 250px" placeholder="e.g. John Smith" value="<%= user?.name %>"/>
+    </div>  <br>
 
     <div class="button">
       <button type="submit">Submit</button>

@@ -14,6 +14,13 @@ const apptSchema = new Schema({
     required: true
   },
 
+  firstName: {
+    type: String,
+},
+  lastName: {
+    type: String,
+  },
+
   comment: {
     type: String,
     default: false,
