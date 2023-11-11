@@ -37,9 +37,6 @@ async function create(req, res) {
         date: body.date,
         userId: req?.user?._id,
         comment: body.comment,
-        timewindow: body.timewindow,
-        address: body.address,
-        name: body.name,
       });
 
 
