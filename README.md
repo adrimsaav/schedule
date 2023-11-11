@@ -52,7 +52,7 @@ Google OAuth was used for clients to sign in with their accounts.
 
 # Challenging Code Parts 
 
-The routes/index.js and controllers/appts.js files were the most difficult for me. I needed assistance with these fragments of code, did a lot of research, asked experienced software engineers, and still don't quite understand how it works. I'm glad it does, but my app still looks very simplistic. I wanted to incorporate a lot of things, but these files drained me. I couldn't add everything I wanted to, and some objects in the models/user.js file were never called.
+The routes/index.js and controllers/appts.js files were the most difficult for me. I needed assistance with these fragments of code, did a lot of research, asked some experts for advice, and still don't quite understand how it works. I'm glad it does, but my app still looks very simplistic. I wanted to incorporate a lot of things, but these files drained me. I couldn't add everything I wanted to, and some objects in the models/user.js file were never called.
 
 ![routes/index.js](/public/images/ss8.png)
 
